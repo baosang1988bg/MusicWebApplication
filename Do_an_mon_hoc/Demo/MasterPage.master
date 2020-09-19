@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Demo_MasterPage" %>
+
+<%@ Register Src="~/UserControl/Home_Login.ascx" TagPrefix="uc1" TagName="Home_Login" %>
+<%@ Register Src="~/UserControl/Home_Regis.ascx" TagPrefix="uc1" TagName="Home_Regis" %>
+
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../bootstrap-4.0.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=width-device, initial-scale=1" />
+    <link href="construct-css.css" rel="stylesheet" />
+    <link href="footer-css.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar rounded-bottom" role="navigation" style="background-color: #343a40;">
+            <div class="pr-sm-4">
+                <ul class="navbar nav pr-sm-3 mr-sm-3">
+                    <li class="nav-item active">
+                        <a id="A1" runat="server" class="nav-link" href="#">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="A2" runat="server" class="nav-link" href="#">BXH</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="A3" runat="server" class="nav-link" href="#">Ca sĩ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="A4" runat="server" class="nav-link" href="#">Playlist</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="A5" runat="server" class="nav-link" href="#">Bài hát</a>
+                    </li>
+                </ul>
+            </div>
+            <div role="form" class="form-inline mx-sm-4">
+                <input type="search" aria-label="Search" placeholder="Tìm kiếm ca sĩ, bài hát..." class="form-control mr-sm-2" style="width: 270px;" />
+                <button id="Button_Search" type="submit" runat="server" class="btn btn-outline-primary mx-sm-1">Tìm kiếm</button>
+            </div>
+
+            <div class="btn-group mr-sm-5">
+                <button class="btn btn-outline-success" runat="server" onserverclick="Page_Load" >Đăng nhập</button>                     
+                <button id="button_dangnhap" runat="server" data-toggle="dropdown" 
+                    type="button" class="btn btn-outline-success dropdown-toggle dropdown-toggle-split">
+                    <span class="sr-only">toggle data</span>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Đăng ký</a>
+                </div>
+            </div>
+
+        </nav>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+            <div class="d-flex flex-column text-center bg-dark" style="color: gray;">
+                <div style="text-align: center" class="mx-auto mt-3 mb-3">
+                    <h4>Bản quyền thuộc nhóm @MSS</h4>
+                    <h5>Nhóm gồm các thành viên: </h5>
+                </div>
+                <hr />
+                <ul class="list-unstyled" style="color: white;">
+                    <li>Lê Hồng Minh</li>
+                    <li>Nguyễn Bảo Sang</li>
+                    <li>Nguyễn Tấn Sỹ</li>
+                </ul>
+            </div>
+        <script src="../bootstrap-4.0.0/dist/js/jquery-3.2.1.slim.min.js"></script>
+        <script src="../bootstrap-4.0.0/dist/js/popper.min.js"></script>
+        <script src="../bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+    </form>
+</body>
+</html>
